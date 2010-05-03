@@ -9,7 +9,7 @@ emfa(data, nbf, x = 1, test = x[1], pvalues = NULL, min.err = 0.001)
 \arguments{
   \item{data}{'FAMTdata' object, see \code{\link{as.FAMTdata}}}
   \item{nbf}{Number of factors of the FA model, see \code{\link{nbfactors}}}
-  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the covariate data frame.}
+  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the covariates data frame.}
   \item{test}{Column number corresponding to the experimental condition (x[1] by default) on which the test is performed.}
   \item{pvalues}{p-values of the individual tests. If NULL, the classical procedure is applied (see \code{\link{raw.pvalues}})}
   \item{min.err}{Stopping criterion value for iterations in EM algorithm (default value: 0.001)}
@@ -32,7 +32,7 @@ emfa(data, nbf, x = 1, test = x[1], pvalues = NULL, min.err = 0.001)
 \seealso{\code{\link{as.FAMTdata}}, \code{\link{nbfactors}}
 }
 \examples{
-## Reading 'FAMT data'
+## Reading 'FAMTdata'
 data(expression)
 data(covariates)
 data(annotations)

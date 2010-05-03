@@ -17,18 +17,16 @@ License: \tab GPL \cr
 LazyLoad: \tab yes\cr
 }
 
-The \code{\link{as.FAMTdata}} function creates a single R object containing the data stored in two mandatory data-frames: 
-
-- the 'expression' dataset with m rows (if m tests) and n columns (n is the sample size) containing the observations of the responses.
-
-- the 'covariates' dataset with n rows and at least 2 columns, one giving the specification to match 'expression' and 'covariates' and the other one containing the observations of at least one covariate. 
-
-An optional dataset can be provided to help interpreting the factors: 'annotations' with m rows and at least one column to identify the variables (ID).
+The \code{\link{as.FAMTdata}} function creates a single R object containing the data stored: 
+- in one mandatory data-frame: the 'expression' dataset with m rows (if m tests) and n columns (n is the sample size) containing the observations of the responses.
+- and two optional data-frames: the 'covariates' dataset with n rows and at least 2 columns, one giving the specification to match 'expression' and 'covariates' and the other one containing the observations of at least one covariate. The optional dataset, 'annotations' can be provided to help interpreting the factors: with m rows and at least one column to identify the variables (ID).
 
 The whole multiple testing procedure is provided in a single function, \code{\link{modelFAMT}}, but you can also choose to apply the procedure step by step, using the functions : 
 
 \code{\link{nbfactors}} (Estimation of the optimal number of factors)
 \code{\link{emfa}} (EM fitting of the Factor Analysis model).
+
+The \code{\link{modelFAMT}} also provides the individual test statistics and corresponding p-values like the \code{\link{raw.pvalues}} function.
 
 A function \code{\link{summaryFAMT}} provides some key elements of classical summaries either on 'FAMTdata' or 'FAMTmodel'.
 
@@ -36,7 +34,6 @@ The estimation of the proportion of true null hypotheses from a 'FAMTmodel' is d
 
 The \code{\link{defacto}} function provides diagnostic plots to interpret and describe the factors.
 
-The \code{\link{raw.pvalues}} function calculates the individual test statistics and corresponding p-values.
 }
 
 \author{
@@ -53,8 +50,8 @@ Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multipl
 \keyword{Factor analysis, Multiple testing, False discovery rate, Dependence.}
 
 \examples{
-# The data are divided into two mandatory data-frames: the gene expressions, 
-#  and the covariates, and an optional dataset, annotations.
+# The data are divided into one mandatory data-frame, the gene expressions, 
+#  and two optional datasets: the covariates, and the annotations.
 
 # The expression dataset with 9893 rows (genes) and 43 columns (arrays)
 #  containing the observations of the responses.
@@ -62,7 +59,7 @@ Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multipl
 #  the second column gives the specification to match 'expression' 
 #  and 'covariates' (array identification), the other ones contain
 #  the observations of covariates.
-# The optional dataset 'annotations' contains 9893 rows (genes) and 
+# The annotations dataset contains 9893 rows (genes) and 
 #  6 columns to help interpreting the factors, the first one (ID) 
 #  identifies the variables (genes). 
 
@@ -82,10 +79,14 @@ summaryFAMT(chicken)
 # rawpval = raw.pvalues(chicken,x=6)
 # hist(rawpval$pval)
 
-# with a supplementary covariate (third column of the covariates data frame)
-rawpval = raw.pvalues(chicken,x=c(3,6),test=6)
-hist(rawpval$pval)
+# with a supplementary covariate (third column of the covariates data frame) (not run)
+# chicken.raw = raw.pvalues(chicken,x=c(3,6),test=6)
+# hist(chicken.raw$pval)
 
+# classical p-values with the modelFAMT function 
+modelpval = modelFAMT(chicken,x=c(3,6),test=6,nbf=0)
+summaryFAMT(modelpval)
+ 
 # FAMT complete multiple testing procedure
 ############################################
 model = modelFAMT(chicken,x=c(3,6),test=6)

@@ -9,7 +9,7 @@ diagnostic.plot = FALSE, min.err = 0.001)
 }
 \arguments{
   \item{data}{'FAMTdata' object, see \code{\link{as.FAMTdata}}}
-  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the covariate data frame}
+  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the covariates data frame}
   \item{test}{Column number corresponding to the experimental condition (x[1] by default) on which the test is performed}
   \item{pvalues}{Vector of p-values for the individual tests. If NULL, the classical procedure is applied (see \code{\link{raw.pvalues}})}
   \item{maxnbfactors}{The maximum number of factors for the FA model (8 by default)}
@@ -26,10 +26,10 @@ diagnostic.plot = FALSE, min.err = 0.001)
 
 \author{ David Causeur }
 %\note{
-\seealso{\code{\link{as.FAMTdata}},\code{\link{emfa}}
+\seealso{\code{\link{as.FAMTdata}}, \code{\link{emfa}}
 }
 \examples{
-## Reading 'FAMT data'
+## Reading 'FAMTdata'
 data(expression)
 data(covariates)
 data(annotations)

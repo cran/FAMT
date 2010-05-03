@@ -7,7 +7,7 @@ raw.pvalues(data, x = 1, test = x[1])
 }
 \arguments{
   \item{data}{'FAMTdata' object, see \code{\link{as.FAMTdata}}}
-  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the 'covariate' data frame.}
+  \item{x}{Column number(s) corresponding to the experimental condition and the optional covariates (1 by default) in the 'covariates' data frame.}
   \item{test}{Column number corresponding to the experimental condition (x[1] by default) of interest in the multiple testing procedure.}
 }
 %\details{
@@ -39,8 +39,8 @@ rawpval = raw.pvalues(chicken,x=6)
 hist(rawpval$pval)
 
 # with a supplementary covariate (third column of the covariates data frame)
-rawpval = raw.pvalues(chicken,x=c(3,6),test=6)
-hist(rawpval$pval)
+# rawpval = raw.pvalues(chicken,x=c(3,6),test=6)
+# hist(rawpval$pval)
 }
 % R documentation directory.
 %\keyword{ ~kwd1 }

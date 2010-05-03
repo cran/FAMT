@@ -28,7 +28,7 @@ select.annot = NULL, lim.b = 0.01, lab = TRUE, cex = 1)
 \author{David Causeur, Maela Kloareg}
 %\note{}
 
-\seealso{\code{\link{as.FAMTdata}},\code{\link{modelFAMT}}
+\seealso{\code{\link{as.FAMTdata}}, \code{\link{modelFAMT}}
 }
 \examples{
 ## FAMT data
@@ -39,14 +39,14 @@ data(annotations)
 # Create the 'FAMTdata'
 ############################################
 chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
-# 'FAMTdata' summary
-summaryFAMT(chicken)
+# 'FAMTdata' summary (not run)
+#summaryFAMT(chicken)
 
 # FAMT complete multiple testing procedure
 ############################################
-model = modelFAMT(chicken,x=c(3,6),test=6)
-# summary on the 'FAMT model'
-summaryFAMT(model)
+model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
+# summary on the 'FAMT model'(not run)
+#summaryFAMT(model)
 
 # Factors description
 ############################################

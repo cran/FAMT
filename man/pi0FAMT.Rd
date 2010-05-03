@@ -1,12 +1,12 @@
 \name{pi0FAMT}
 \alias{pi0FAMT}
-\title{Estimation of the Proportion of True Null Hypothesis
+\title{Estimation of the Proportion of True Null Hypotheses
 }
-\description{A function to estimate the proportion \code{pi0} of true null hypothesis from a 'FAMT model' (see also function "pval.estimate.eta0" in package "fdrtool").}
+\description{A function to estimate the proportion \code{pi0} of true null hypotheses from a 'FAMTmodel' (see also function "pval.estimate.eta0" in package "fdrtool").}
 \usage{pi0FAMT(model, method = c("smoother", "density"), 
 diagnostic.plot = FALSE)}
 \arguments{
-  \item{model}{'FAMT model' object (see \code{\link{modelFAMT}})}
+  \item{model}{'FAMTmodel' object (see \code{\link{modelFAMT}})}
   \item{method}{algorithm used to estimate the proportion of null p-values. Available options are "density" and "smoother" (as described in Friguet and Causeur, 2010)}
   \item{diagnostic.plot}{if TRUE the histogram of the p-values with the estimate of \code{pi0} horizontal line is plotted. With the "smoother" method, an additional graph is displayed showing the spline curve used to estimate \code{pi0}. With the "density" method, the estimated convex density of the p-values is plotted onto the histogram}
   }
@@ -28,20 +28,22 @@ Friguet C. and Causeur D. (2010) Estimation of the proportion of true null hypoh
 \seealso{\code{\link{modelFAMT}}
 }
 \examples{
-# Reading 'FAMT data'
+# Reading 'FAMTdata'
 data(expression)
 data(covariates)
 data(annotations)
 chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
 
 # FAMT complete multiple testing procedure
-model = modelFAMT(chicken,x=c(3,6),test=6)
+model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
 
 # Estimation of the Proportion of True Null Hypotheses
-# "density" method
-pi0FAMT(model,method="density",diagnostic.plot=TRUE)
-# "smoother" method (not run)
-# pi0FAMT(model,method="smoother",diagnostic.plot=TRUE)
+# "density" method (not run)
+# pi0FAMT(model,method="density",diagnostic.plot=TRUE)
+
+# "smoother" method
+pi0FAMT(model,method="smoother",diagnostic.plot=TRUE)
+
 }
 % R documentation directory.
 %\keyword{ ~kwd1 }

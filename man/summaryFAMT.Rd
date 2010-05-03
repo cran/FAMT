@@ -2,11 +2,11 @@
 \alias{summaryFAMT}
 \title{Summary of a FAMTdata or a FAMTmodel}
 
-\description{The function produces summaries of 'FAMT data' or 'FAMT model'. The function involves a specific method depending on the class of the main argument.
+\description{The function produces summaries of 'FAMTdata' or 'FAMTmodel'. The function involves a specific method depending on the class of the main argument.
 
-If the main argument is a 'FAMTdata' object, the function provides, for the 'expression file', the number of tests (which corresponds to the number of genes or rows), the sample size (which is the number of arrays or columns). The columns and rows containing missing data are listed. The function provides classical summaries for 'covariates' and 'annotations' data (see summary in \code{\link{FAMT-package}}). 
+If the main argument is a 'FAMTdata' object, the function provides, for the 'expression file', the number of tests (which corresponds to the number of genes or rows), the sample size (which is the number of arrays or columns). The function provides classical summaries for 'covariates' and 'annotations' data (see summary in \code{\link{FAMT-package}}). 
 
-If the argument is a 'FAMTmodel', the function provides the numbers of rejected genes using classical and FAMT analyses, the annotation characteristics of significants genes, and the estimated proportion of true null hypothesis.
+If the argument is a 'FAMTmodel', the function provides the numbers of rejected genes using classical and FAMT analyses, the annotation characteristics of significant genes, and the estimated proportion of true null hypotheses.
 }
 
 \usage{
@@ -24,12 +24,10 @@ If the argument is a 'FAMTdata':
   a list with components expression:
   \item{expression$'Number of tests'}{Number of genes}
   \item{expression$'Sample size'}{Number of arrays}
-  \item{expression$'Incompletely observed variables'}{Rows with missing variables}
-  \item{expression$'Incompletely observed individuals'}{Columns with missing variables}
   \item{covariates}{Classical summary of covariates}
   \item{annotations}{Classical summary of annotations}
 If the argument is a 'FAMTmodel':
-  \item{nbreject}{Matrix giving the numbers of rejected genes with the classical analysis and with the FAMT analysis for the given TypeI levels alpha.}
+  \item{nbreject}{Matrix giving the numbers of rejected genes with the classical analysis and with the FAMT analysis for the given Type I levels alpha.}
   \item{DE}{Identification of the significant genes by their annotations.}
   \item{pi0}{Estimation of the proportion of true null hypotheses, estimated with the "smoother" method, see \code{\link{pi0FAMT}}.}
 }
@@ -43,7 +41,7 @@ If the argument is a 'FAMTmodel':
 \seealso{\code{\link{as.FAMTdata}}, \code{\link{modelFAMT}}
 }
 \examples{
-## Reading 'FAMT data'
+## Reading 'FAMTdata'
 data(expression)
 data(covariates)
 data(annotations)
