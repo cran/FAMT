@@ -2,7 +2,7 @@ Package: FAMT
 Type: Package
 Title: Factor Analysis for Multiple Testing (FAMT) : simultaneous tests
         under dependence in high-dimensional data
-Version: 2.1
+Version: 2.2
 Date: 2010-05-03
 Author: David Causeur, Chloe Friguet, Magalie Houee-Bigot, Maela
         Kloareg
@@ -23,6 +23,6 @@ Depends: mnormt, impute
 License: GPL (>= 2)
 URL: http://famt.free.fr/
 LazyLoad: yes
-Packaged: 2010-07-08 15:11:47 UTC; HOUEE
+Packaged: 2010-12-13 10:56:59 UTC; HOUEE
 Repository: CRAN
-Date/Publication: 2010-07-24 19:41:03
+Date/Publication: 2010-12-13 14:13:13
