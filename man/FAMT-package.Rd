@@ -43,7 +43,12 @@ Maintainer: \email{David.Causeur@agrocampus-ouest.fr}
 }
 
 \references{
-Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multiple testing under dependence. Journal of the American Statistical Association, 104:488, p.1406-1415
+David Causeur, Chloe Friguet, Magalie Houee-Bigot, Maela Kloareg (2011).
+        Factor Analysis for Multiple Testing (FAMT): An R Package for Large-Scale Significance Testing under Dependence.
+        \emph{Journal of Statistical Software}, \bold{40}(14), 1-19.
+        URL \url{http://www.jstatsoft.org/v40/i14/}.
+
+Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multiple testing under dependence. \emph{Journal of the American Statistical Association}, 104:488, p.1406-1415
 
 \url{http://famt.free.fr/}
 }
