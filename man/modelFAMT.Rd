@@ -51,19 +51,19 @@ data(annotations)
 
 chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
 
-# Classical method with modelFAMT (not run)
-# modelpval=modelFAMT(chicken,x=c(3,6),test=6,nbf=0)
-# summaryFAMT(modelpval)
+# Classical method with modelFAMT 
+\dontrun{modelpval=modelFAMT(chicken,x=c(3,6),test=6,nbf=0)}
+\dontrun{summaryFAMT(modelpval)}
 
 # FAMT complete multiple testing procedure
 # when the optimal number of factors is unknown
-model = modelFAMT(chicken,x=c(3,6),test=6)
+\dontrun{model = modelFAMT(chicken,x=c(3,6),test=6)
 
-# when the optimal number of factors has already been estimated (not run)
-# model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
+# when the optimal number of factors has already been estimated 
+ model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
 
 summaryFAMT(model)
-hist(model$adjpval)
+hist(model$adjpval)}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

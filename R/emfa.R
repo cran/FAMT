@@ -64,4 +64,3 @@ if (nbf > 0) {
 res = list(B=B,Psi=Psi,Factors=Factors,commonvar=commonvar,SelectH0=SelectH0)
 return(res)    
 }
-

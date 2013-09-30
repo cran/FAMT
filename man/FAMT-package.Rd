@@ -43,77 +43,12 @@ Maintainer: \email{David.Causeur@agrocampus-ouest.fr}
 }
 
 \references{
-David Causeur, Chloe Friguet, Magalie Houee-Bigot, Maela Kloareg (2011).
-        Factor Analysis for Multiple Testing (FAMT): An R Package for Large-Scale Significance Testing under Dependence.
-        \emph{Journal of Statistical Software}, \bold{40}(14), 1-19.
-        URL \url{http://www.jstatsoft.org/v40/i14/}.
+Causeur D., Friguet C., Houee-Bigot M., Kloareg M. (2011). Factor Analysis for Multiple Testing (FAMT): An R Package for Large-Scale Significance Testing Under Dependence. Journal of Statistical Software, 40(14),1-19. 
+\url{http://www.jstatsoft.org/v40/i14}
 
-Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multiple testing under dependence. \emph{Journal of the American Statistical Association}, 104:488, p.1406-1415
+Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multiple testing under dependence. Journal of the American Statistical Association, 104:488, p.1406-1415
 
 \url{http://famt.free.fr/}
 }
 \keyword{Factor analysis, Multiple testing, False discovery rate, Dependence.}
 
-\examples{
-# The data are divided into one mandatory data-frame, the gene expressions, 
-#  and two optional datasets: the covariates, and the annotations.
-
-# The expression dataset with 9893 rows (genes) and 43 columns (arrays)
-#  containing the observations of the responses.
-# The covariates dataset with 43 rows (arrays) and 6 columns: 
-#  the second column gives the specification to match 'expression' 
-#  and 'covariates' (array identification), the other ones contain
-#  the observations of covariates.
-# The annotations dataset contains 9893 rows (genes) and 
-#  6 columns to help interpreting the factors, the first one (ID) 
-#  identifies the variables (genes). 
-
-data(expression)
-data(covariates)
-data(annotations)
-
-# Create the 'FAMTdata'
-############################################
-chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
-# 'FAMTdata' summary
-summaryFAMT(chicken)
-
-# Calculation of classical p-values
-############################################
-# test on the 6th covariate (not run) : 
-# rawpval = raw.pvalues(chicken,x=6)
-# hist(rawpval$pval)
-
-# with a supplementary covariate (third column of the covariates data frame) (not run)
-# chicken.raw = raw.pvalues(chicken,x=c(3,6),test=6)
-# hist(chicken.raw$pval)
-
-# classical p-values with the modelFAMT function 
-modelpval = modelFAMT(chicken,x=c(3,6),test=6,nbf=0)
-summaryFAMT(modelpval)
- 
-# FAMT complete multiple testing procedure
-############################################
-model = modelFAMT(chicken,x=c(3,6),test=6)
-# summary on the 'FAMT model'
-summaryFAMT(model)
-
-# Estimation of the Proportion of True Null Hypotheses (not run)
-############################################
-# pi0FAMT(model,method="density",diagnostic.plot=TRUE)
-
-# Factors description
-############################################
-chicken.defacto = defacto(model,axes=1:2,select.covar=4:5,select.annot=3:6,
-cex=0.6)
-
-# Other useful functions : the FAMT procedure step by step (not run)
-############################################
-
-# number of factors in the FA model
-# nbfactors(chicken,x=c(3,6),test=6)
-
-# Fitting the FA model
-# chicken.emfa = emfa(chicken,nbf=3,x=c(3,6),test=6)
-# chicken.emfa$commonvar
-}

@@ -1,4 +1,5 @@
-defacto = function (model, plot = TRUE, axes = c(1, 2), select.covar = NULL,
+defacto <-
+function (model, plot = TRUE, axes = c(1, 2), select.covar = NULL,
    select.annot = NULL, lim.b = 0.01, lab = TRUE, cex = 1) {
    palette(c("black", "red", "green3", "blue", "cyan", "magenta",
        "darkgray", "darkgoldenrod", "darkgreen", "violet", "turquoise",

@@ -1,4 +1,4 @@
-raw.pvalues=
+raw.pvalues <-
 function (data, x = 1, test = x[1]) {
     if (class(data)[1] != "FAMTdata")
         stop("Class of data should be FAMTdata")
@@ -37,4 +37,4 @@ function (data, x = 1, test = x[1]) {
         pval = pf(Ftest, df1 = dfr0 - dfr1, df2 = dfr1, lower.tail = FALSE)
     }
     list(pval = pval, test = Ftest, resdf = dfr1)
-} 
+}

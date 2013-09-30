@@ -33,4 +33,4 @@ function (data, x = 1, test = x, pvalues = NULL) {
     res = P0 %*% y
     res[, -SelectH0] = P1 %*% y[, -SelectH0]
     list(residuals = res, SelectH0 = SelectH0, P = P1)
-} 
+}

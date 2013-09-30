@@ -39,8 +39,8 @@ rawpval = raw.pvalues(chicken,x=6)
 hist(rawpval$pval)
 
 # with a supplementary covariate (third column of the covariates data frame)
-# rawpval = raw.pvalues(chicken,x=c(3,6),test=6)
-# hist(rawpval$pval)
+\dontrun{rawpval = raw.pvalues(chicken,x=c(3,6),test=6)}
+\dontrun{hist(rawpval$pval)}
 }
 % R documentation directory.
 %\keyword{ ~kwd1 }

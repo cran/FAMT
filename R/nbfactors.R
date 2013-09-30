@@ -14,17 +14,18 @@ Blist = lapply(falist,function(fa,m) matrix(fa$B,nrow=m),m=m)
 
 bivprob = function (rho,lower,upper=-lower,mean=0) {
 nu = 0
-lower = rep(as.double((lower - mean)),2)
-upper = rep(as.double((upper - mean)),2)
+low = rep(as.double((lower - mean)),2)
+upp = rep(as.double((upper - mean)),2)
 if (any(lower == upper)) return(0)
 infin = c(2, 2)
 infin = as.integer(infin)
-lower = replace(lower, lower == -Inf, 0)
-upper = replace(upper, upper == Inf, 0)
+low = replace(low, low == -Inf, 0)
+upp = replace(upp, upp == Inf, 0)
 rho = as.double(rho)
 prob = as.double(0)
-a = .Fortran("smvbvt", prob, nu, lower, upper, infin, rho, PACKAGE = "mnormt")
-return(a[[1]])
+a = lapply(rho,function(r,low,upp) biv.nt.prob(df=Inf,lower=low,upper=upp,mean=rep(0,2),S=matrix(c(1,r,r,1),2,2)),
+       low=low,upp=upp)
+return(unlist(a))
 }
 
 Dt = function(rho) {
@@ -74,7 +75,7 @@ return(sdt) }
 
 sdt = VarInflation(data,Blist,x,test,maxnbfactors,pvalues,dig)
 if (diagnostic.plot) {
-   X11()
+   dev.new()
    plot(0:maxnbfactors,sdt,ylab="Variance Inflation Criterion",xlab="Number of factors",bty="l",
       lwd=1.25,type="b",pch=16,cex.lab=1.25,cex=1.25,cex.axis=1.25)
 }
@@ -84,4 +85,3 @@ if (which.min(sdt)>1) {
    opt = max((1:maxnbfactors)[jumps>0.05]) }
 list(criterion=sdt,optimalnbfactors=opt)
 }
-

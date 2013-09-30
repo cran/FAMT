@@ -28,19 +28,19 @@ diagnostic.plot = FALSE, min.err = 0.001)
 %\note{
 \seealso{\code{\link{as.FAMTdata}}, \code{\link{emfa}}
 }
-\examples{
+\examples{ 
 ## Reading 'FAMTdata'
 data(expression)
 data(covariates)
 data(annotations)
 chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
 
-# Estimation of the number of factors
-nbfactors(chicken,x=c(3,6),test=6)
+# Estimation of the number of factors 
+\dontrun{nbfactors(chicken,x=c(3,6),test=6)}
 
 # Estimation of the number of factors with a graph of variance inflation 
-# criterion (not run)
-# nbfactors(chicken,x=c(3,6),test=6, diagnostic.plot=TRUE)
+# criterion
+\dontrun{nbfactors(chicken,x=c(3,6),test=6, diagnostic.plot=TRUE)}
 
 }
 % R documentation directory.

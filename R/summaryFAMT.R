@@ -1,4 +1,4 @@
-summaryFAMT =
+summaryFAMT <-
 function (obj, pi0 = NULL, alpha = 0.15, info = c("ID", "Name")) 
 {
     if (!any(is.element(c("FAMTdata", "FAMTmodel"), class(obj)[1]))) 

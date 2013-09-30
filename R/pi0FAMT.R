@@ -92,7 +92,7 @@ function(model, method = c("smoother", "density"), diagnostic.plot = FALSE){
         #get(getOption("device"))()
         method_name = paste("method =", method)
         pi0_value = paste("pi0 =", round(pi0, 4))
-        x11()
+        dev.new()
         histo = hist(pvalues, freq = FALSE, bre = "FD", main = "Diagnostic Plot: Distribution of p-values and estimated pi0", xlim = c(0, 1), xlab = "p-values")
         y0 = dunif(histo$breaks) * pi0
         lines(histo$breaks, y0, col = 2)
@@ -107,4 +107,3 @@ function(model, method = c("smoother", "density"), diagnostic.plot = FALSE){
    }
 return(pi0=pi0)
 }
-

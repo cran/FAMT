@@ -28,4 +28,3 @@ res = list(adjpval=adjpval$pval,adjtest=adjpval$test,adjdata=adjdata,FA=fa,pval=
 class(res) = c("FAMTmodel","list")
 return(res)
 }
-

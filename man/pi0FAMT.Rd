@@ -38,8 +38,8 @@ chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
 model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
 
 # Estimation of the Proportion of True Null Hypotheses
-# "density" method (not run)
-# pi0FAMT(model,method="density",diagnostic.plot=TRUE)
+# "density" method 
+\dontrun{ pi0FAMT(model,method="density",diagnostic.plot=TRUE)}
 
 # "smoother" method
 pi0FAMT(model,method="smoother",diagnostic.plot=TRUE)

@@ -1,4 +1,4 @@
-as.FAMTdata=
+as.FAMTdata <-
 function (expression, covariates = NULL, annotations = NULL, 
     idcovar = 1, idannot = NULL, na.action = TRUE) 
 {

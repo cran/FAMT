@@ -39,14 +39,14 @@ data(annotations)
 # Create the 'FAMTdata'
 ############################################
 chicken = as.FAMTdata(expression,covariates,annotations,idcovar=2)
-# 'FAMTdata' summary (not run)
-#summaryFAMT(chicken)
+# 'FAMTdata' summary 
+\dontrun{summaryFAMT(chicken)}
 
 # FAMT complete multiple testing procedure
 ############################################
 model = modelFAMT(chicken,x=c(3,6),test=6,nbf=3)
-# summary on the 'FAMT model'(not run)
-#summaryFAMT(model)
+# summary on the 'FAMT model'
+\dontrun{summaryFAMT(model)}
 
 # Factors description
 ############################################
