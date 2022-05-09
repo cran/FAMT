@@ -42,7 +42,7 @@ function (expression, covariates = NULL, annotations = NULL,
     print(na.expr)
     if (na.action == TRUE) {
         if (sum(is.na(expr)) > 0) {
-            expr = as.data.frame(impute.knn(as.matrix(expr))$data)
+            expr = as.data.frame(impute::impute.knn(as.matrix(expr))$data)
             print("Missing values were imputed using nearest neighbor averaging (impute.knn {impute})")
         }
     }

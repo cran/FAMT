@@ -44,11 +44,14 @@ Maintainer: \email{David.Causeur@agrocampus-ouest.fr}
 
 \references{
 Causeur D., Friguet C., Houee-Bigot M., Kloareg M. (2011). Factor Analysis for Multiple Testing (FAMT): An R Package for Large-Scale Significance Testing Under Dependence. Journal of Statistical Software, 40(14),1-19. 
-\url{http://www.jstatsoft.org/v40/i14}
+\url{https://www.jstatsoft.org/v40/i14}
 
 Friguet C., Kloareg M. and Causeur D. (2009). A factor model approach to multiple testing under dependence. Journal of the American Statistical Association, 104:488, p.1406-1415
 
 \url{http://famt.free.fr/}
 }
-\keyword{Factor analysis, Multiple testing, False discovery rate, Dependence.}
+\concept{Factor analysis}
+\concept{Multiple testing}
+\concept{False discovery rate}
+\concept{Dependence}
 

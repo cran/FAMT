@@ -1,7 +1,7 @@
-4796516bff48bd1298534e10b41392f5 *DESCRIPTION
-df390c53434517b304ac5db487184641 *NAMESPACE
+640c1a6da9410a621b45d5cea58b4717 *DESCRIPTION
+467f283e01bca2f17cfe3f86580f1d8a *NAMESPACE
 8a9312cc3dc43f4758aa057717fcbf70 *R/FAMT_2.5-internal.R
-b6b07af05ec1d06775d4ee23e5169854 *R/as.FAMTdata.R
+e825ebc4ef18fdc44aa50ff7567946ce *R/as.FAMTdata.R
 d0682037029b742a2c30a3093e532eb2 *R/defacto.R
 2b288790a3a2b4ab1989875032221be3 *R/emfa.R
 1a64294c25f5180a7d9b25ebfbe23476 *R/modelFAMT.R
@@ -14,7 +14,7 @@ b077ace3a10083a36a7efaa6aba6476d *R/summaryFAMT.R
 5d67de9ead5fd3d771685e22c59153a7 *data/covariates.rda
 15de006ea9bcea58089b1eeed4c1bd6c *data/datalist
 a545ff5e1c0807e725e4162237f32d5c *data/expression.rda
-c7a3eddf9511644a40b0c1dbe089e254 *man/FAMT-package.Rd
+a7384ff5f42b12cc9a47cae5b71a582a *man/FAMT-package.Rd
 3b2fd2bee7ebaa74a818c83a4598e860 *man/annotations.Rd
 97f0aee747070d965d09af587ba43330 *man/as.FAMTdata.Rd
 3b99257a1c9518b82733a0b4a8827b87 *man/covariates.Rd
